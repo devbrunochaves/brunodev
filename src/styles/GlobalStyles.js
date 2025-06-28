@@ -8,6 +8,8 @@ const GlobalStyles = createGlobalStyle`
   --background-color: #0C2945;
   --text-color: #f2f2f2;
   --white: #ffffff;
+
+  --font-poppins: 'Poppins', sans-serif;
 }
 
 
@@ -15,7 +17,7 @@ body {
   background-color: var(--background-color);
   max-width: 1280px;
   justify-content: center;
-  margin: 35px auto ;
+  margin: 35px auto;
   color: var(--text-color);
 }`;
 

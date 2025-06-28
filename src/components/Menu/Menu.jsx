@@ -2,14 +2,18 @@ import Logo from "../../assets/logo_brunodev.svg";
 import styled from "styled-components";
 
 const MenuContainer = styled.nav`
+  max-width: 80%;
   background-color: var(--primary-color);
   padding: 1rem 2rem;
   border-radius: 999px;
   border: 1px solid var(--white);
   color: var(--white);
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+  font-family: var(--font-poppins);
+  font-size: 18px;
+  font-weight: 100;
 `;
 
 const MenuItems = styled.ul`
@@ -22,15 +26,31 @@ const MenuItems = styled.ul`
 
 const MenuItem = styled.li`
   a {
+    position: relative;
     color: var(--white);
     text-decoration: none;
     font-weight: 400;
+    padding: 0.5rem 0;
 
-    &:hover {
-      color: var(--accent-color);
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 6px;
+      width: 100%;
+      height: 3px;
+      background-color: var(--secondary-color);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
     }
   }
 `;
+
 
 const Menu = () => {
   return (
@@ -39,7 +59,6 @@ const Menu = () => {
         <img src={Logo} alt="Bruno Chaves Dev" />
       </a>
 
-      
         <MenuItems>
         <MenuItem><a href="#inicio">Início</a></MenuItem>
         <MenuItem><a href="#sobre">Sobre</a></MenuItem>
@@ -52,4 +71,4 @@ const Menu = () => {
   );
 };
 
-export default Menu; // <- ESSA LINHA É ESSENCIAL
+export default Menu;
