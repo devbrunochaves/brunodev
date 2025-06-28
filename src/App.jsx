@@ -1,12 +1,16 @@
-import Menu from "./components/menu/Menu";
-
+// App.jsx
+import Menu from "./components/Menu/Menu";
+import GlobalStyles from "./styles/GlobalStyles";
 
 function App() {
   return (
-    <div>
-      <Menu />
-    </div>
-  )
+    <>
+      <GlobalStyles />
+      <div className="container">
+        <Menu />
+      </div>
+    </>
+  );
 }
 
 export default App;
